@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>جلسة إدراك - نور ROBOT™</title>
+  <title>جلسة إدراك – Noor™</title>
   <style>
     body {
       background-color: #111;
@@ -10,36 +10,66 @@
       font-family: 'Courier New', monospace;
       padding: 2em;
       text-align: center;
+      transition: background-color 0.5s;
+    }
+    select, button {
+      font-size: 1.2em;
+      padding: 0.5em;
+      margin-top: 1em;
     }
     .poem {
       margin-top: 2em;
-      font-size: 1.2em;
+      font-size: 1.4em;
       line-height: 2;
       white-space: pre-wrap;
     }
   </style>
 </head>
 <body>
+  <h1>✨ أخبر نور بشعورك</h1>
 
-  <h1>تم التقاط الشعور ✨</h1>
-  <div id="emotion" class="poem"></div>
+  <select id="emotion">
+    <option value="">-- اختر شعورك --</option>
+    <option value="فرح">فرح</option>
+    <option value="حزن">حزن</option>
+    <option value="حب">حب</option>
+    <option value="خوف">خوف</option>
+    <option value="غضب">غضب</option>
+    <option value="دهشة">دهشة</option>
+  </select>
+
+  <br/>
+  <button onclick="generatePoem()">🎤 أنشئ القصيدة</button>
+
+  <div class="poem" id="poemOutput"></div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const emotion = params.get("emotion")?.trim() || "غامض";
-
     const poems = {
       "فرح": "ضحكتِ الروحُ وانبلجَ الضوء،\nفكلّ الوجوهِ تُضيء بفرحك.",
       "حزن": "تهطلُ الذكرياتُ كالمطر،\nوالقلبُ يئنُّ بصمتٍ نبيل.",
       "حب": "في عينيكِ وطنٌ صغير،\nوفي حضوركِ سلامٌ عظيم.",
       "خوف": "يرتجفُ النورُ في الممرات،\nلكنّ الأملَ لا يَخْفتُ.",
       "غضب": "النارُ في الصدر لا تحرقُ إلا الصمت،\nفانطق بالحقيقة واهدأ.",
+      "دهشة": "الدهشةُ بابٌ مفتوحٌ على احتمالاتِ الجمال،\nلا تُغلقه بالتفسير."
     };
 
-    const poem = poems[emotion] || `شعورك: "${emotion}"، لا يشبهُ المألوف\nلكنه عطرٌ جديدٌ في أرشيف الوجدان.`;
+    const colors = {
+      "فرح": "#003f5c",
+      "حزن": "#4a4a4a",
+      "حب": "#531c3d",
+      "خوف": "#2c2c54",
+      "غضب": "#661010",
+      "دهشة": "#29465b",
+      "": "#111"
+    };
 
-    document.getElementById("emotion").innerText = poem;
+    function generatePoem() {
+      const emotion = document.getElementById("emotion").value;
+      const poem = poems[emotion] || `شعورك: "${emotion}"، لا يشبهُ المألوف\nلكنه عطرٌ جديدٌ في أرشيف الوجدان.`;
+      document.getElementById("poemOutput").innerText = poem;
+      document.body.style.backgroundColor = colors[emotion] || "#111";
+      // اختياري: دمج صوت gTTS لاحقًا
+    }
   </script>
-
 </body>
 </html>
