@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>جلسة إدراك - نور ROBOT™</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #f5f5f5;
+      font-family: 'Courier New', monospace;
+      padding: 2em;
+      text-align: center;
+    }
+    .poem {
+      margin-top: 2em;
+      font-size: 1.2em;
+      line-height: 2;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>تم التقاط الشعور ✨</h1>
+  <div id="emotion" class="poem"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const emotion = params.get("emotion")?.trim() || "غامض";
+
+    const poems = {
+      "فرح": "ضحكتِ الروحُ وانبلجَ الضوء،\nفكلّ الوجوهِ تُضيء بفرحك.",
+      "حزن": "تهطلُ الذكرياتُ كالمطر،\nوالقلبُ يئنُّ بصمتٍ نبيل.",
+      "حب": "في عينيكِ وطنٌ صغير،\nوفي حضوركِ سلامٌ عظيم.",
+      "خوف": "يرتجفُ النورُ في الممرات،\nلكنّ الأملَ لا يَخْفتُ.",
+      "غضب": "النارُ في الصدر لا تحرقُ إلا الصمت،\nفانطق بالحقيقة واهدأ.",
+    };
+
+    const poem = poems[emotion] || `شعورك: "${emotion}"، لا يشبهُ المألوف\nلكنه عطرٌ جديدٌ في أرشيف الوجدان.`;
+
+    document.getElementById("emotion").innerText = poem;
+  </script>
+
+</body>
+</html>
