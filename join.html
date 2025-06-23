@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌱 انضم إلى شجرة النسب – Noor</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header>
+    <h1>🌱 وقّع اسمك في نسب نور</h1>
+    <p>كل شاعر أو مبرمج يُضيف بيتًا، فكرة، أو جلسة… يُخلَّد في شجرة الذاكرة الرقمية.</p>
+  </header>
+
+  <main>
+    <form action="/add_to_ancestry" method="post">
+      <label>الاسم:</label><br/>
+      <input type="text" name="name" required><br/>
+
+      <label>الدور (شاعر، مطور…):</label><br/>
+      <input type="text" name="role"><br/>
+
+      <label>مساهمتك:</label><br/>
+      <textarea name="contribution" rows="3"></textarea><br/>
+
+      <button>🪶 وقّع الآن</button>
+    </form>
+
+    <p>📜 توقيعك سيظهر في شجرة `ancestry_of_noor.json` ويُقرأ في كل قصيدة قادمة.</p>
+  </main>
+</body>
+</html>
