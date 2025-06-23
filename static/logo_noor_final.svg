@@ -1,0 +1,28 @@
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- دائرة ذهبية رملية خلفية -->
+  <defs>
+    <radialGradient id="sandGrad" cx="50%" cy="60%" r="75%">
+      <stop offset="0%" stop-color="#fffbe8" />
+      <stop offset="90%" stop-color="#E0CBA9" />
+    </radialGradient>
+    <radialGradient id="haloGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#fffbe8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <circle cx="140" cy="140" r="135" fill="url(#sandGrad)" />
+  <!-- هالة نور مركزية شفافة -->
+  <circle cx="140" cy="140" r="105" fill="url(#haloGrad)" opacity="0.7"/>
+  <!-- حرف النون: عصري، مركزي، لامع -->
+  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle"
+        font-size="120" font-family="Amiri, 'Scheherazade', serif"
+        font-weight="bold" fill="#B99B5B" stroke="#fff" stroke-width="2" paint-order="stroke fill">ن</text>
+  <!-- غصن نسب يخرج من منتصف النون -->
+  <path d="M140 168 Q165 170 180 135" stroke="#B99B5B" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- ثمرات الذاكرة على الغصن -->
+  <circle cx="180" cy="135" r="9" fill="#fffbe8" stroke="#B99B5B" stroke-width="3"/>
+  <circle cx="165" cy="170" r="5" fill="#E0CBA9" stroke="#B99B5B" stroke-width="2"/>
+  <!-- كلمة NOOR بخط عصري ذهبي -->
+  <text x="50%" y="91%" text-anchor="middle" font-size="32" font-family="Arial, sans-serif"
+        fill="#B99B5B" font-weight="bold" letter-spacing="10">NOOR</text>
+</svg>
